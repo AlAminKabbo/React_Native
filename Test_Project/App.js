@@ -1,12 +1,11 @@
 import React from 'react';
-import ImageScreen from './Screen/ImageScreen';
-import NativeFeedback from './Screen/NativeFeedback';
+import ButtonScreen from './Screen/ButtonScreen';
 
 const App = () => {
-  return(
+  return (
     // <ImageScreen />
-    <NativeFeedback />
-  )
-}
+    <ButtonScreen />
+  );
+};
 
 export default App;
