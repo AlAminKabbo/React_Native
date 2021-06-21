@@ -5,7 +5,7 @@ const ButtonScreen = () => {
   return (
     <View>
       <Text>Button</Text>
-      <Button title="Submit" onPress={()=> console.log('Click')}/>
+      <Button title="Submit" onPress={() => alert("Click")}/>
     </View>
   );
 };

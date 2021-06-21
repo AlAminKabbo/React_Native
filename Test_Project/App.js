@@ -1,10 +1,10 @@
 import React from 'react';
-import ButtonScreen from './Screen/ButtonScreen';
+import CustomAlert from './Screen/CustomAlert';
 
 const App = () => {
   return (
     // <ImageScreen />
-    <ButtonScreen />
+    <CustomAlert />
   );
 };
 
