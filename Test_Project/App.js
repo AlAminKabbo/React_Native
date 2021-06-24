@@ -1,15 +1,21 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React,{useState} from 'react';
 
-import {View, Text} from 'react-native';
+import {View, Text,Button} from 'react-native';
 
 function App() {
-  let name = "";
+  const [name,setName] = useState('Kabbo');
   return (
     <View>
     {
       name ? <Text>{name}</Text> : <Text>No Data</Text>
     }
+      <Button
+        title="Change text"
+        onPress={()=>{
+          setName('Maruf');
+        }}
+      />
     </View>
   );
 }
