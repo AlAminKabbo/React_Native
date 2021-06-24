@@ -1,31 +1,16 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 
-import {View, Text, StyleSheet} from 'react-native';
-
-const Profile = ({name, phoneNumber}) => {
-  return (
-    <View style={styles.myView}>
-      <Text>{name}</Text>
-      <Text>{phoneNumber}</Text>
-    </View>
-  );
-};
+import {View, Text} from 'react-native';
 
 function App() {
+  let name = "";
   return (
     <View>
-      <Profile name="Al Amin" phoneNumber="01728861499" />
-      <Profile name="Nitish" phoneNumber="01700000000" />
-      <Profile name="Maruf" phoneNumber="01911111111" />
+    {
+      name ? <Text>{name}</Text> : <Text>No Data</Text>
+    }
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  myView: {
-    backgroundColor: 'cyan',
-    padding: 20,
-    margin: 5,
-  },
-});
 export default App;
