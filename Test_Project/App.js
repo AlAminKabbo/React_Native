@@ -1,22 +1,16 @@
-/* eslint-disable prettier/prettier */
-import React from 'react';
+// /* eslint-disable prettier/prettier */
+import React, {useState} from 'react';
 
-import {View, Text,FlatList} from 'react-native';
+import {View, TextInput} from 'react-native';
 
 function App() {
-  const student = [
-    {roll: '1', name:'Kabbo'},
-    {roll: '5', name:'Nitish'},
-    {roll: '23', name:'Kabbo'},
-  ];
+  const [Itext, setItext] = useState('');
+  console.log(Itext);
   return (
     <View>
-      <FlatList
-        data={student}
-        renderItem={({item})=>{
-          return <Text >{item.name}</Text>;
-        }}
-        keyExtractor={(item)=>item.roll}
+      <TextInput
+        placeholder="Enter your name"
+        onChangeText={text => setItext(text)}
       />
     </View>
   );
