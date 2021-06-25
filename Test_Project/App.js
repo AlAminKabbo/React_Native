@@ -1,24 +1,22 @@
 /* eslint-disable prettier/prettier */
-import React,{useState} from 'react';
+import React from 'react';
 
-import {View, Text,Button,Image} from 'react-native';
+import {View, Text,FlatList} from 'react-native';
 
 function App() {
-  const [name,setName] = useState('Kabbo');
+  const student = [
+    {roll: '1', name:'Kabbo'},
+    {roll: '5', name:'Nitish'},
+    {roll: '23', name:'Kabbo'},
+  ];
   return (
     <View>
-    {
-      name ? <Text>{name}</Text> : <Text>No Data</Text>
-    }
-      <Button
-        title="Change text"
-        onPress={()=>{
-          setName('Maruf');
+      <FlatList
+        data={student}
+        renderItem={({item})=>{
+          return <Text >{item.name}</Text>;
         }}
-      />
-      <Image source={require('./ImagePack/Kabbo.png')}/>
-      <Image source={{uri:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'}}
-        style={{height:300, width:250}}
+        keyExtractor={(item)=>item.roll}
       />
     </View>
   );
