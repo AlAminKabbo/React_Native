@@ -13,9 +13,13 @@ const Stack = createNativeStackNavigator();
 const Navigating = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={ButtonScreen} options={{
-        headerShown: false
-      }} />
+      <Stack.Screen
+        name="Home"
+        component={ButtonScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen name="Image" component={ImageScreen} />
     </Stack.Navigator>
   );
