@@ -34,6 +34,7 @@ const StudentDetails = ({route}) => {
         </TouchableOpacity>
         </View>
         </View>
+        
     </View>
   );
 };
