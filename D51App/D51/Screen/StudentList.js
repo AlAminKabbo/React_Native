@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   SafeAreaView,
@@ -7,7 +8,9 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
+
 
 const DATA = [
   {
@@ -237,27 +240,36 @@ const DATA = [
   },
 ];
 
-const Item = ({title, roll, img}) => (
-  <TouchableOpacity onPress={() => alert(roll)}>
-    <View style={styles.item}>
-      <View style={styles.imbStyle}>
-        <Image style={styles.img} source={img} />
-      </View>
-      <View>
-        <Text style={styles.name}>{title}</Text>
-        <Text style={styles.roll}>Roll : {roll}</Text>
-      </View>
-    </View>
-  </TouchableOpacity>
-);
 
-const StudentList = () => {
+
+const StudentList = ({navigation}) => {
+  const Item = ({title, roll, img, phone, blood, url}) => (
+    <TouchableOpacity onPress={() => navigation.navigate('StudentDetail',{
+      title,
+      roll,
+      img,
+      phone,
+      blood,
+      url,
+    })}>
+      <View style={styles.item}>
+        <View style={styles.imbStyle}>
+          <Image style={styles.img} source={img} />
+        </View>
+        <View>
+          <Text style={styles.name}>{title}</Text>
+          <Text style={styles.roll}>Roll : {roll}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
   const renderItem = ({item}) => (
-    <Item title={item.name} roll={item.roll} img={item.img} />
+    <Item title={item.name} roll={item.roll} img={item.img} phone={item.phone} blood={item.blood} url={item.url}/>
   );
 
   return (
     <SafeAreaView style={styles.container}>
+    <StatusBar barStyle = "white-content" hidden = {false} backgroundColor = "blue" translucent = {true}/>
       <FlatList
         data={DATA}
         renderItem={renderItem}

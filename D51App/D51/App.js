@@ -4,21 +4,49 @@
 //   return <StudentList />;
 // };
 // export default App;
-import * as React from 'react';
-import {Button, View, Text} from 'react-native';
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-function HomeScreen({navigation}) {
+import StudentList from './Screen/StudentList';
+import StudentDetails from './Screen/StudentDetails';
+
+const Stack = createNativeStackNavigator();
+
+const Navigating = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
+    <Stack.Navigator>
+      <Stack.Screen name="Student List" component={StudentList}
+        options={{
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
 
-// ... other code from the previous section
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          }}
+      />
+      <Stack.Screen
+        name="StudentDetail"
+        component={StudentDetails}
+        options={{
+          title: 'Student Details' ,
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const App = () => {
+  return <NavigationContainer>{Navigating()}</NavigationContainer>;
+};
+export default App;
