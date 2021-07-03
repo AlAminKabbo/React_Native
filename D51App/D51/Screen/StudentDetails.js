@@ -6,7 +6,7 @@ const StudentDetails = ({route}) => {
   const {title, roll, img, phone, blood, url} = route.params;
   console.log(url);
   return (
-    <View>
+    <View style= {styles.container}>
       <View style= {styles.imgCircle}>
       <Image style= {styles.img} source={img} />
       </View>
@@ -27,15 +27,21 @@ const StudentDetails = ({route}) => {
         ><Image style= {styles.smsLogo} source={require('../image/sms.jpg')}/>
         </TouchableOpacity>
 
-        <TouchableOpacity
+        <View>
+        <TouchableOpacity 
         onPress={() =>{Linking.openURL(url)}}
         ><Image style= {styles.fbLogo} source={require('../image/fb.png')}/>
         </TouchableOpacity>
-      </View>
+        </View>
+        </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor:'white',
+    flex:1,
+  },
   logoDirection:{
     flexDirection:'row',
   },
