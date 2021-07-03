@@ -9,6 +9,7 @@ const StudentDetails = ({route}) => {
     <View style= {styles.container}>
       <View style= {styles.imgCircle}>
       <Image style= {styles.img} source={img} />
+      
       </View>
       <View style= {styles.textView}>
       <Text style= {styles.text}>Name : {title}</Text>
@@ -34,7 +35,7 @@ const StudentDetails = ({route}) => {
         </TouchableOpacity>
         </View>
         </View>
-        
+
     </View>
   );
 };
