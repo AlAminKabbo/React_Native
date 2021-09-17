@@ -16,7 +16,9 @@ const Stack = createNativeStackNavigator();
 const Navigating = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Student List" component={StudentList}
+      <Stack.Screen
+        name="Student List"
+        component={StudentList}
         options={{
           headerStyle: {
             backgroundColor: 'blue',
@@ -26,13 +28,13 @@ const Navigating = () => {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          }}
+        }}
       />
       <Stack.Screen
         name="StudentDetail"
         component={StudentDetails}
         options={{
-          title: 'Student Details' ,
+          title: 'Student Details',
           headerStyle: {
             backgroundColor: 'blue',
           },
@@ -40,7 +42,7 @@ const Navigating = () => {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          }}
+        }}
       />
     </Stack.Navigator>
   );
